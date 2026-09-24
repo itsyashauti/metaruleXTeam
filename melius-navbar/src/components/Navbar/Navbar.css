@@ -1,0 +1,265 @@
+/* This wrapper acts like the page background for context if placed directly in root */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&display=swap');
+
+.navbar-container {
+  width: 100%;
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  /* User's Custom Glassmorphism - Adjusted Transparency */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(20, 25, 28, 0.15)
+  );
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.22),
+    inset 0 1px 1px rgba(255, 255, 255, 0.16);
+  border-radius: 32px;
+  height: 72px; /* A little bit taller */
+  
+  /* Exact space from the left and right edges */
+  margin: 0 auto;
+  width: calc(100% - 1rem);
+  max-width: none;
+  
+  padding: 0 16px 0 24px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Left Section containing Logo and Links */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  color: #111111; 
+  font-size: 28px;
+  font-weight: 900; /* Max boldness */
+  letter-spacing: -1.2px; /* Very tight spacing like the image */
+  display: flex;
+  align-items: center;
+}
+
+.logo-x {
+  color: #4ade80; 
+  font-size: 34px; 
+  margin-left: 0px;
+  transform: scaleY(0.95); /* Matches the slightly wide/flattened X */
+}
+
+.logo-icon {
+  display: block;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Desktop Navigation Links */
+.desktop-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced gap to accommodate link padding */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-nav-links li {
+  display: flex;
+}
+
+.desktop-nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  opacity: 0.85;
+}
+
+.desktop-nav-links a:hover {
+  opacity: 1;
+  color: #4ade80; /* Logo-like green color */
+  background: rgba(25, 30, 32, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.chevron {
+  opacity: 0.6;
+  margin-top: 2px;
+  transition: all 0.3s ease;
+}
+
+.desktop-nav-links a:hover .chevron {
+  opacity: 1;
+  stroke: #4ade80;
+}
+
+/* Right Section Buttons */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: 32px;
+}
+
+.btn {
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.btn-signin {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 12px 16px;
+  opacity: 0.85;
+}
+
+.btn-signin:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+.btn-start {
+  background-color: #ffffff;
+  color: #111111;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.2);
+}
+
+.btn-start:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* Hamburger Menu (Hidden on desktop) */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-right: 12px;
+}
+
+.hamburger-btn svg path {
+  stroke: #ffffff;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 6px;
+  margin: 8px 1rem;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav-links a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobile-btn {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 992px) {
+  .desktop-nav-links {
+    gap: 16px;
+  }
+  
+  .navbar-left {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .desktop-nav-links, .desktop-buttons {
+    display: none;
+  }
+  
+  .hamburger-btn {
+    display: block;
+  }
+  
+  .navbar {
+    margin: 0 12px;
+  }
+}

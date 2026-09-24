@@ -1,0 +1,40 @@
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  /* Default mouse position off-screen so the eraser isn't visible initially */
+  --mouse-x: -1000px;
+  --mouse-y: -1000px;
+}
+
+/* Base dot grid: faint dark dots */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Highlight dot grid: bright white dots, revealed ONLY near the cursor */
+.app-container::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  
+  /* Bright white dots (smaller) */
+  background-image: radial-gradient(rgba(255, 255, 255, 1) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  
+  /* Mask covers more area */
+  -webkit-mask-image: radial-gradient(circle at var(--mouse-x) var(--mouse-y), black 0%, black 80px, transparent 200px);
+  mask-image: radial-gradient(circle at var(--mouse-x) var(--mouse-y), black 0%, black 80px, transparent 200px);
+  
+  transition: -webkit-mask-image 0.1s ease, mask-image 0.1s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+

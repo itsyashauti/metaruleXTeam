@@ -1,0 +1,36 @@
+.home-main {
+  padding-top: 3rem; /* Exact 3rem distance below the navbar */
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.home-title {
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  text-align: center;
+  margin: 0;
+}
+
+.animated-word {
+  display: inline-block;
+  color: inherit;
+  /* Add font-style to the transition */
+  transition: filter 0.4s steps(4), font-style 0.4s steps(1);
+  will-change: filter;
+  font-style: normal;
+}
+
+.animated-word.fade-out {
+  /* Pure mosaic pixelation ONLY, no blur */
+  filter: url(#pixelate);
+  opacity: 1; 
+  font-style: italic; /* Text turns italic while censored! */
+}
+
+.animated-word.fade-in {
+  filter: none;
+  opacity: 1;
+  font-style: normal;
+}
