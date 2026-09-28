@@ -1,0 +1,124 @@
+.testimonials {
+  background-color: var(--background);
+}
+
+.testimonial-list {
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+}
+
+.testimonial-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.testimonial-header {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 3fr;
+  align-items: center;
+  padding: 2rem 0;
+  cursor: pointer;
+}
+
+.test-col {
+  display: flex;
+}
+
+.test-action {
+  justify-content: flex-end;
+}
+
+.client-name {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.test-toggle {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.testimonial-header:hover .test-toggle {
+  color: var(--accent);
+}
+
+.testimonial-content {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.testimonial-content-inner {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 3fr;
+  padding-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.testimonial-item.open .testimonial-content-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.test-services-list {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.test-details {
+  grid-column: 3 / span 2;
+  padding-right: 20%;
+}
+
+.mobile-label {
+  display: none;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.test-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.test-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.test-quote {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hidden-mobile {
+    display: none;
+  }
+  .testimonial-content-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .test-services-list {
+    grid-column: 1;
+  }
+  .test-details {
+    grid-column: 1;
+    padding-right: 0;
+  }
+  .mobile-label {
+    display: block;
+  }
+}

@@ -1,0 +1,92 @@
+.capabilities {
+  background-color: var(--background);
+  color: var(--foreground);
+  padding-top: 2vw;
+}
+
+.capabilities .section-title {
+  color: var(--foreground);
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2vw;
+  margin-top: 4rem;
+}
+
+.cap-category-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--foreground);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cap-category {
+  font-size: 1.1rem;
+  color: var(--foreground);
+  text-transform: uppercase;
+}
+
+.cap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.cap-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--foreground);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.cap-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  opacity: 0;
+  transition: all var(--transition-fast);
+}
+
+.cap-item-btn:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.cap-item-btn:hover .cap-icon {
+  width: 18px;
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

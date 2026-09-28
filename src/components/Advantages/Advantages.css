@@ -1,0 +1,127 @@
+.advantages {
+  background-color: #004d43;
+  color: #f1f1f1;
+  border-radius: 3rem;
+  margin: 0 1rem;
+  padding-bottom: 5vw;
+}
+
+.marquee-container {
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 1rem 0;
+  margin-bottom: 5vw;
+  white-space: nowrap;
+}
+
+.marquee h1 {
+  font-size: clamp(4rem, 10vw, 12rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  animation: scrollMarquee 20s linear infinite;
+  margin: 0;
+  line-height: 1;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.adv-list {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4vw;
+}
+
+.adv-header-row h4 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.adv-grid {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.adv-item {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.adv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  cursor: pointer;
+}
+
+.adv-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.adv-num {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.adv-title {
+  font-size: 2rem;
+  text-transform: none;
+}
+
+.adv-toggle {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.adv-header:hover .adv-toggle {
+  color: #cdea68;
+}
+
+.adv-content {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.adv-content-inner {
+  padding-left: 3.5rem;
+  padding-bottom: 2rem;
+  max-width: 60%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease-in-out;
+}
+
+.adv-item.open .adv-content-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.adv-content-inner p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 1024px) {
+  .adv-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .adv-content-inner {
+    padding-left: 0;
+    max-width: 100%;
+  }
+  
+  .adv-title {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,22 @@
+:root {
+  --background: #f1f1f1;
+  --foreground: #212121;
+  --muted: #a1a1a1;
+  --border: #c9c9c9;
+  --accent: #cdea68;
+  
+  --font-heading: 'Neue Montreal', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Neue Montreal', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  --transition-fast: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  --transition-medium: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  --transition-slow: 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+[data-theme="dark"] {
+  --background: #212121;
+  --foreground: #f1f1f1;
+  --muted: #a1a1a1;
+  --border: #4a4a4a;
+  --accent: #cdea68;
+}

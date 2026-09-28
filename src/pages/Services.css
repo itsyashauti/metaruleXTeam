@@ -1,0 +1,27 @@
+.services-page {
+  background-color: var(--background);
+}
+
+.lime-section {
+  background-color: var(--accent);
+  color: var(--foreground);
+  border-radius: 3rem;
+  margin: 0 1rem;
+  padding: 4rem 0;
+}
+
+.white-section {
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 4rem 0;
+}
+
+.lime-section .introduction,
+.lime-section .capabilities,
+.white-section .testimonials,
+.white-section .statistics,
+.lime-section .cta {
+  background-color: transparent;
+  border-radius: 0;
+  margin: 0;
+}

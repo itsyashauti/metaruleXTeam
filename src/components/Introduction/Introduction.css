@@ -1,0 +1,25 @@
+.introduction {
+  background-color: var(--background);
+  padding-bottom: 2vw;
+}
+
+.intro-content {
+  max-width: 85%;
+}
+
+.intro-content h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.intro-content .underline {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .intro-content {
+    max-width: 100%;
+  }
+}
